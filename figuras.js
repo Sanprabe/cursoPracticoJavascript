@@ -73,3 +73,57 @@ function calcularAreaCirculo(){
 
     alert(aCirculo(radio));
 }
+
+// Triangulo Isoceles
+
+function isocelesHeight(duplicatedSide, diffSide){
+    return Math.sqrt((duplicatedSide**2) - ((diffSide**2)/4) )
+}
+
+function isIsoceles(lado1, lado2, lado3){
+
+    inputLado1 = document.getElementById("inputTrianguloIsocelesLado1");
+    inputLado2 = document.getElementById("inputTrianguloIsocelesLado2");
+    inputLado3 = document.getElementById("inputTrianguloIsocelesLado3");
+
+    lado1 = parseFloat(inputLado1.value);
+    lado2 = parseFloat(inputLado2.value);
+    lado3 = parseFloat(inputLado3.value);
+
+    if((lado1 === lado2) && (lado1 != lado3) ){
+        duplicatedSide = lado1;
+        diffSide = lado3;
+        if(duplicatedSide === 0 || diffSide === 0){
+            alert("No es un triangulo si tiene un lado que mide 0");
+            return;
+        } else if(duplicatedSide*2 <= diffSide){
+            alert("No es un triangulo que exista");
+            return;
+        }
+    } else if ((lado1 === lado3) && (lado1 != lado2)){
+        duplicatedSide = lado1;
+        diffSide = lado2;
+        if(duplicatedSide === 0 || diffSide === 0){
+            alert("No es un triangulo si tiene un lado que mide 0");
+            return;
+        } else if(duplicatedSide*2 <= diffSide){
+            alert("No es un triangulo que exista");
+            return;
+        }
+    } else if((lado2 === lado3) && (lado2 != lado1)){
+        duplicatedSide = lado2;
+        diffSide = lado1;
+        if(duplicatedSide === 0 || diffSide === 0){
+            alert("No es un triangulo si tiene un lado que mide 0");
+            return;
+        } else if(duplicatedSide*2 <= diffSide){
+            alert("No es un triangulo que exista");
+            return;
+        }
+    } else{
+        alert("Este no es un triangulo isoceles");
+        return;
+    }
+
+    alert(isocelesHeight(duplicatedSide, diffSide));
+}
