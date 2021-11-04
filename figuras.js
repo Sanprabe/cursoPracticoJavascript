@@ -13,25 +13,63 @@ function aTriangulo(base, altura){
 function pCirculo(radius){
     return 2*(Math.PI)*(radius);
 }
-function aCirculo(){
+function aCirculo(radius){
     return (Math.PI)*(radius**2);
 }
 
 // ----- Funciones ejecutadas en el DOM ----- //
 
+// Cuadrado
 function calcularPerimetroCuadrado(){
-    const input = document.getElementById("inputCuadrado");
-    const lado = input.value;
+    const inputLado = document.getElementById("inputCuadrado");
+    const lado = parseFloat(inputLado.value);
 
-    const perimetro = pCuadrado(lado);
-    alert(perimetro);
+    alert(pCuadrado(lado));
 }
 
 function calcularAreaCuadrado(){
-    const input = document.getElementById("inputCuadrado");
-    const lado = input.value;
+    const inputLado = document.getElementById("inputCuadrado");
+    const lado = inputLado.value;
     
-    const area = aCuadrado(lado);
-    alert(area);
+    alert(aCuadrado(lado));
 }
 
+// Triangulo
+function calcularPerimetroTriangulo(){
+    const inputLado1 = document.getElementById("inputTrianguloLado1");
+    const lado1 = parseFloat(inputLado1.value);
+
+    const inputLado2 = document.getElementById("inputTrianguloLado2");
+    const lado2 = parseFloat(inputLado2.value);
+
+    const inputLado3 = document.getElementById("inputTrianguloLado3");
+    const lado3 = parseFloat(inputLado3.value);
+
+    alert(pTriangulo(lado1, lado2, lado3));
+}
+
+function calcularAreaTriangulo(){
+    const inputBase = document.getElementById("inputTrianguloBase");
+    const base = parseFloat(inputBase.value);
+
+    const inputAltura = document.getElementById("inputTrianguloAltura");
+    const altura = parseFloat(inputAltura.value);
+
+    alert(aTriangulo(base, altura));
+}
+
+//Diametro
+
+function calcularDiametroCirculo(){
+    const inputRadio = document.getElementById("inputCirculo");
+    const radio = parseFloat(inputRadio.value);
+
+    alert(pCirculo(radio));
+}
+
+function calcularAreaCirculo(){
+    const inputRadio = document.getElementById("inputCirculo");
+    const radio = parseFloat(inputRadio.value);
+
+    alert(aCirculo(radio));
+}
