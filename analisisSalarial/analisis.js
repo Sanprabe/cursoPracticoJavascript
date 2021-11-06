@@ -1,4 +1,4 @@
-// HELPERS
+// Helpers
 function calcularPromedio(arr){
     let sumArr = 0;
     let sizeArr = arr.length;
@@ -8,7 +8,9 @@ function calcularPromedio(arr){
     return sumArr / sizeArr;
 }
 
-function calcularMediana(arr){
+// Calculadora mediana de los salarios
+
+function calcularMedianaSalario(arr){
     let medio = arr.length;
 
     if (medio % 2 == 0){
@@ -19,12 +21,22 @@ function calcularMediana(arr){
     }
 }
 
+// Analisis
 
+let salariosCol = colombia.map((persona) => {return persona.salary;});
 
-const salariosCol = colombia.map( (persona) => {return persona.salary;}).sort(function(salaryA, salaryB){
+salariosCol = salariosCol.sort(function(salaryA, salaryB){
     return salaryA - salaryB;
-}) // Se hace una lista con los atributos salary de el objeto "personas" y luego se ordenan de mayor a menor
+}) 
+
+medianaGeneralCol = calcularMedianaSalario(salariosCol);
+
+// Calcular top 10%
+
+const a = salariosCol.length - parseInt((salariosCol.length)/10);
+const colombiaTop10 = salariosCol.splice(a);
+console.log(colombiaTop10);
 
 
-console.log(`La mediana de los salarios en Colombia es ${calcularMediana(salariosCol)}`);
+
 

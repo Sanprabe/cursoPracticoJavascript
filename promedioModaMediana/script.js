@@ -79,10 +79,10 @@ function mediaAritmeticaPonderada(arrW, arrX){
 
 
 // --- CORRER MEDIA ARITMETICA PONDERADA ---
-let w = [85, 70, 90];
-let x = [3, 1, 1];
+// let w = [85, 70, 90];
+// let x = [3, 1, 1];
 
-console.log(`La media aritmetica ponderada de los arays de ejemplo es ${mediaAritmeticaPonderada(w,x)}`);
+// console.log(`La media aritmetica ponderada de los arays de ejemplo es ${mediaAritmeticaPonderada(w,x)}`);
 
 // --- CORRER PROMEDIO, MODA, MEDIANA ---
 // let arrEx = [100, 340, 230, 580, 32, 12, 13]; // Valores para promedio y mediana
