@@ -54,10 +54,41 @@ function calcularMediana(arr){
     }
 }
 
-// let arrEx = [100, 340, 230, 580, 32, 12, 13]; // Definir valores
-let arrEx = [0, 1, 1, 1, 1, 2, 3, 3, 4, 4, 4, 4, 5, 6, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9];
-arrEx = arrEx.sort((a,b) => {return a-b}); // Organizar valores
+function mediaAritmeticaPonderada(arrW, arrX){
 
-console.log(`El promedio de aray ejemplo es ${calcularPromedio(arrEx)}`);
-console.log(`La moda de aray ejemplo es ${calcularModa(arrEx)}`);
-console.log(`La mediana de aray ejemplo es ${calcularMediana(arrEx)}`);
+    function add(count, x){ // Para sumar con reduce
+        return count + x
+    }
+
+    if (arrW.length != arrX.length){
+        console.log("No es posible calcular");
+    }
+
+    let sumWbyX = 0;
+
+    for(let i = 0; i < arrW.length; i++){
+        let temp = arrW[i]*arrX[i];
+        sumWbyX = sumWbyX + temp;
+    }
+
+    let sumW = arrX.reduce(add, 0);
+
+    return sumWbyX / sumW
+
+}
+
+
+// --- CORRER MEDIA ARITMETICA PONDERADA ---
+let w = [85, 70, 90];
+let x = [3, 1, 1];
+
+console.log(`La media aritmetica ponderada de los arays de ejemplo es ${mediaAritmeticaPonderada(w,x)}`);
+
+// --- CORRER PROMEDIO, MODA, MEDIANA ---
+// let arrEx = [100, 340, 230, 580, 32, 12, 13]; // Valores para promedio y mediana
+// let arrEx = [0, 1, 1, 1, 1, 2, 3, 3, 4, 4, 4, 4, 5, 6, 7, 7, 8, 8, 8, 8, 8, 9, 9, 9]; // Valores para moda
+// arrEx = arrEx.sort((a,b) => {return a-b}); // Organizar de menor a mayor
+
+// console.log(`El promedio de aray ejemplo es ${calcularPromedio(arrEx)}`);
+// console.log(`La moda de aray ejemplo es ${calcularModa(arrEx)}`);
+// console.log(`La mediana de aray ejemplo es ${calcularMediana(arrEx)}`);
